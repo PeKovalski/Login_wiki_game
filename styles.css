@@ -1,74 +1,42 @@
-body {
-      margin: 0;
-        font-family: Arial, sans-serif;
-          background: linear-gradient(120deg, #3a1c71, #d76d77, #ffaf7b);
-            min-height: 100vh;
-              display: flex;
-                justify-content: center;
-                  align-items: center;
-                  }
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-                  .login-container {
-                    background: #1e1e2f;
-                      padding: 2rem;
-                        border-radius: 10px;
-                          box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
-                            text-align: center;
-                              width: 300px;
-                                color: #fff;
-                                }
+* {
+  font-family: 'Inter', sans-serif;
+}
 
-                                h2 {
-                                  margin-bottom: 1.5rem;
-                                    color: #ffaf7b;
-                                    }
+/* Forçar fundo global */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
+  color: white;
+}
 
-                                    .form-group {
-                                      margin-bottom: 1rem;
-                                        text-align: left;
-                                        }
+/* Classe para aplicar em seções extras, se precisar */
+.bg-gradient-mystical {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
+}
 
-                                        label {
-                                          display: block;
-                                            margin-bottom: 0.3rem;
-                                            }
+.text-gradient {
+  background: linear-gradient(to right, #c084fc, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-                                            input {
-                                              width: 100%;
-                                                padding: 0.6rem;
-                                                  border: none;
-                                                    border-radius: 5px;
-                                                      outline: none;
-                                                      }
+.spinner {
+  animation: spin 1s linear infinite;
+}
 
-                                                      button {
-                                                        width: 100%;
-                                                          padding: 0.7rem;
-                                                            background: #ffaf7b;
-                                                              border: none;
-                                                                border-radius: 5px;
-                                                                  font-weight: bold;
-                                                                    cursor: pointer;
-                                                                      transition: background 0.3s;
-                                                                      }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
 
-                                                                      button:hover {
-                                                                        background: #ff8a50;
-                                                                        }
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
 
-                                                                        #login-message {
-                                                                          margin-top: 1rem;
-                                                                            font-weight: bold;
-                                                                            }
-
-                                                                            .site-content {
-                                                                              display: none;
-                                                                                padding: 2rem;
-                                                                                  color: #fff;
-                                                                                    text-align: center;
-                                                                                    }
-
-                                                                                    .hidden {
-                                                                                      display: none;
-                                                                                      }
+.hidden {
+  display: none !important;
 }
