@@ -1,42 +1,238 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+/* Custom styles for the mystical theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
-  font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Forçar fundo global */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
-  color: white;
-}
-
-/* Classe para aplicar em seções extras, se precisar */
 .bg-gradient-mystical {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0f172a 50%, #1e293b 75%, #0f172a 100%);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #c084fc, #60a5fa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #c084fc, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25);
+}
+
+.image-hover {
+    transition: transform 0.7s ease;
+}
+
+.image-hover:hover {
+    transform: scale(1.05);
+}
+
+.pulse-glow {
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { 
+        opacity: 0.5; 
+    }
+    50% { 
+        opacity: 1; 
+    }
+}
+
+.floating-element {
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    50% { 
+        transform: translateY(-20px); 
+    }
 }
 
 .spinner {
-  animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.smooth-scroll {
-  scroll-behavior: smooth;
+    from { 
+        transform: rotate(0deg); 
+    }
+    to { 
+        transform: rotate(360deg); 
+    }
 }
 
 .hidden {
-  display: none !important;
+    display: none !important;
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Additional utility classes for enhanced mystical effects */
+.backdrop-blur-mystical {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.shadow-mystical {
+    box-shadow: 0 25px 50px -12px rgba(139, 92, 246, 0.25);
+}
+
+.border-mystical {
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.bg-mystical-card {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.5) 100%);
+}
+
+.bg-mystical-overlay {
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.5) 50%, rgba(15, 23, 42, 0.8) 100%);
+}
+
+/* Enhanced focus states for accessibility */
+input:focus,
+button:focus {
+    outline: 2px solid rgba(139, 92, 246, 0.5);
+    outline-offset: 2px;
+}
+
+/* Scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.5);
+}
+
+/* Selection styling */
+::selection {
+    background-color: rgba(139, 92, 246, 0.3);
+    color: #ffffff;
+}
+
+/* Loading animation variants */
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Interactive button effects */
+.btn-mystical {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, #8b5cf6, #3b82f6);
+    transition: all 0.3s ease;
+}
+
+.btn-mystical::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-mystical:hover::before {
+    left: 100%;
+}
+
+.btn-mystical:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Enhanced gradient backgrounds */
+.bg-gradient-ethereal {
+    background: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.1) 0%, transparent 70%),
+                linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0f172a 50%, #1e293b 75%, #0f172a 100%);
+}
+
+.bg-gradient-portal {
+    background: conic-gradient(from 0deg at 50% 50%, 
+                               rgba(139, 92, 246, 0.2) 0deg, 
+                               rgba(59, 130, 246, 0.2) 90deg, 
+                               rgba(139, 92, 246, 0.2) 180deg, 
+                               rgba(59, 130, 246, 0.2) 270deg, 
+                               rgba(139, 92, 246, 0.2) 360deg);
+}
+
+/* Text shadow effects for better readability */
+.text-shadow-mystical {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Mobile responsiveness enhancements */
+@media (max-width: 768px) {
+    .card-hover:hover {
+        transform: none;
+    }
+    
+    .image-hover:hover {
+        transform: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .text-gradient {
+        background: #ffffff;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .border-mystical {
+        border-color: #ffffff;
+    }
 }
